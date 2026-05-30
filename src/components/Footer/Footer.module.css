@@ -1,0 +1,349 @@
+.footer {
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.65);
+  position: relative;
+  padding-bottom: 0;
+}
+
+.topBar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 50%, var(--accent) 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 48px;
+  padding: 64px 0 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Brand - Corrigido alinhamento */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhado à esquerda */
+  justify-content: flex-start;
+}
+
+.logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  display: block;
+}
+
+.tagline {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 24px;
+  max-width: 280px;
+  text-align: left;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.social {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.social:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+
+/* Columns */
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.colTitle {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.links li a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.links li a:hover {
+  color: white;
+  padding-left: 4px;
+}
+
+/* Contact list */
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+}
+
+.contactList li svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.contactList li a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease;
+}
+
+.contactList li a:hover {
+  color: white;
+}
+
+/* Bottom */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.copy {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.dev {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Floating WhatsApp button */
+.floating {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+.floating:hover .floatingTooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.floatingTooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  background: var(--dark);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.floatingTooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: var(--dark);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile - Centralizado */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 0 40px;
+    text-align: center;
+  }
+
+  /* Centralizar brand no mobile */
+  .brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .tagline {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  /* Centralizar colunas no mobile */
+  .col {
+    align-items: center;
+  }
+
+  .colTitle {
+    text-align: center;
+  }
+
+  .links {
+    align-items: center;
+  }
+
+  .links li a {
+    text-align: center;
+  }
+
+  .links li a:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Centralizar contatos no mobile */
+  .contactList {
+    align-items: center;
+  }
+
+  .contactList li {
+    justify-content: center;
+  }
+
+  /* Bottom centralizado no mobile */
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 24px 0 20px;
+  }
+
+  .copy {
+    font-size: 12px;
+  }
+
+  .dev {
+    font-size: 11px;
+  }
+
+  /* WhatsApp flutuante */
+  .floating {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .floatingTooltip {
+    display: none;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .grid {
+    gap: 28px;
+    padding: 40px 0 32px;
+  }
+
+  .logo {
+    height: 52px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .colTitle {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .links li a,
+  .contactList li {
+    font-size: 13px;
+  }
+
+  .social {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social svg {
+    width: 16px;
+    height: 16px;
+  }
+}
