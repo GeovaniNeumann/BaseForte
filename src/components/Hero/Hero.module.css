@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* Remove o parallax */
 }
 
 /* Background image handling via CSS for better performance */
@@ -16,6 +17,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* Remove o parallax no mobile também */
+  }
+  
   .hero {
     background-image: url('/heromobile.webp');
   }
@@ -29,12 +34,8 @@
     rgba(0, 0, 0, 0.8) 0%,
     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0.2) 100%
-  ),
-  radial-gradient(
-    circle at 20% 50%,
-    rgba(0, 0, 0, 0.4) 0%,
-    transparent 100%
   );
+  /* Removido o radial-gradient que causava o efeito de mouse parallax */
   z-index: 1;
 }
 
@@ -273,8 +274,12 @@
   }
 }
 
-/* Mobile - Parágrafos padronizados */
+/* Mobile */
 @media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+  
   .content {
     padding-top: 120px;
     padding-bottom: 60px;
@@ -284,15 +289,13 @@
     max-width: 90%;
   }
 
-  /* Padronização do parágrafo */
   .sub {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    font-size: 16px; /* Padrão para mobile */
+    font-size: 16px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
-    font-weight: 400;
   }
 
   .actions {
@@ -353,7 +356,6 @@
     font-size: 38px;
   }
 
-  /* Parágrafo ainda legível em telas pequenas */
   .sub {
     font-size: 15px;
     line-height: 1.6;
@@ -380,7 +382,7 @@
   }
 }
 
-/* Telas muito pequenas (ex: iPhone SE) */
+/* Telas muito pequenas */
 @media (max-width: 375px) {
   .sub {
     font-size: 14px;
