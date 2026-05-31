@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import styles from './Navbar.module.css'
 
 const links = [
+  { href: '#hero', label: 'Início' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#galeria', label: 'Galeria' },
   { href: '#contato', label: 'Contato' },
