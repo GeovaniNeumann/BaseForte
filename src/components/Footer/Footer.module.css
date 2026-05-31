@@ -22,7 +22,7 @@
 .brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinhado à esquerda */
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
@@ -37,8 +37,8 @@
 
 .tagline {
   font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
   margin-bottom: 24px;
   max-width: 280px;
   text-align: left;
@@ -100,6 +100,7 @@
   color: rgba(255, 255, 255, 0.5);
   transition: color 0.2s ease, padding-left 0.2s ease;
   display: inline-block;
+  line-height: 1.5;
 }
 
 .links li a:hover {
@@ -123,6 +124,7 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
   text-align: left;
+  line-height: 1.5;
 }
 
 .contactList li svg {
@@ -150,12 +152,14 @@
 
 .copy {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.5;
 }
 
 .dev {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1.5;
 }
 
 /* Floating WhatsApp button */
@@ -226,9 +230,19 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  
+  .tagline {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  
+  .links li a,
+  .contactList li {
+    font-size: 14px;
+  }
 }
 
-/* Mobile - Centralizado */
+/* Mobile - Centralizado com tipografia padronizada */
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr;
@@ -246,6 +260,9 @@
   .tagline {
     max-width: 100%;
     text-align: center;
+    font-size: 15px; /* Padrão para mobile */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   .socials {
@@ -259,6 +276,8 @@
 
   .colTitle {
     text-align: center;
+    font-size: 14px; /* Aumentado para melhor legibilidade */
+    margin-bottom: 18px;
   }
 
   .links {
@@ -267,6 +286,9 @@
 
   .links li a {
     text-align: center;
+    font-size: 15px; /* Padrão para mobile */
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   .links li a:hover {
@@ -281,6 +303,9 @@
 
   .contactList li {
     justify-content: center;
+    font-size: 15px; /* Padrão para mobile */
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   /* Bottom centralizado no mobile */
@@ -292,11 +317,15 @@
   }
 
   .copy {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.4);
   }
 
   .dev {
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.3);
   }
 
   /* WhatsApp flutuante */
@@ -324,17 +353,17 @@
   }
 
   .tagline {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .colTitle {
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 16px;
   }
 
   .links li a,
   .contactList li {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .social {
@@ -345,5 +374,13 @@
   .social svg {
     width: 16px;
     height: 16px;
+  }
+  
+  .copy {
+    font-size: 12px;
+  }
+
+  .dev {
+    font-size: 11px;
   }
 }

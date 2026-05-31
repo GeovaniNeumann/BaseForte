@@ -138,7 +138,7 @@
 .sub {
   font-size: clamp(14px, 1.5vw, 16px);
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
+  line-height: 1.6;
   max-width: 500px;
   margin-bottom: 28px;
   font-weight: 400;
@@ -273,7 +273,7 @@
   }
 }
 
-/* Mobile */
+/* Mobile - Parágrafos padronizados */
 @media (max-width: 768px) {
   .content {
     padding-top: 120px;
@@ -284,10 +284,15 @@
     max-width: 90%;
   }
 
+  /* Padronização do parágrafo */
   .sub {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+    font-size: 16px; /* Padrão para mobile */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
   }
 
   .actions {
@@ -304,6 +309,7 @@
     width: 100%;
     justify-content: center;
     padding: 12px 20px;
+    font-size: 14px;
   }
 
   .stats {
@@ -318,11 +324,11 @@
   }
 
   .statNum {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .statLabel {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 
@@ -347,8 +353,10 @@
     font-size: 38px;
   }
 
+  /* Parágrafo ainda legível em telas pequenas */
   .sub {
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 1.6;
     margin-bottom: 24px;
   }
 
@@ -368,6 +376,14 @@
   }
 
   .statLabel {
-    font-size: 8px;
+    font-size: 9px;
+  }
+}
+
+/* Telas muito pequenas (ex: iPhone SE) */
+@media (max-width: 375px) {
+  .sub {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
