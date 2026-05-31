@@ -7,6 +7,7 @@ const services = [
     title: 'Galpões Industriais',
     description: 'Estruturas robustas e planejadas para indústrias de médio e grande porte, com vãos livres e pé-direito elevado.',
     category: 'Industrial',
+    image: '/3.webp', // Caminho direto para a pasta public
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="8" y="28" width="48" height="28" rx="1"/>
@@ -23,6 +24,7 @@ const services = [
     title: 'Centros de Distribuição',
     description: 'Soluções logísticas com grande área de armazenagem, docas e fluxo otimizado para operações eficientes.',
     category: 'Logística',
+    image: '/2.webp',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="4" y="24" width="56" height="32" rx="1"/>
@@ -40,6 +42,7 @@ const services = [
     title: 'Armazéns Agrícolas',
     description: 'Estruturas projetadas para armazenamento de grãos, fertilizantes e insumos com proteção contra intempéries.',
     category: 'Agrícola',
+    image: '/1.webp',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="10" y="26" width="44" height="30" rx="1"/>
@@ -58,6 +61,7 @@ const services = [
     title: 'Galpões Comerciais',
     description: 'Espaços versáteis para comércios, showrooms e lojas, com fachada moderna e acabamento personalizado.',
     category: 'Comercial',
+    image: '/1.webp',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="6" y="20" width="52" height="36" rx="2"/>
@@ -74,6 +78,7 @@ const services = [
     title: 'Estruturas Mistas',
     description: 'Solução híbrida combinando concreto pré-moldado com cobertura metálica para máxima eficiência.',
     category: 'Industrial',
+    image: '/2.webp',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="8" y="30" width="48" height="26" rx="1"/>
@@ -91,6 +96,7 @@ const services = [
     title: 'Galpões com Mezanino',
     description: 'Aproveitamento máximo do espaço vertical com estrutura para mezanino, ideal para escritórios e estoque.',
     category: 'Comercial',
+    image: '/3.webp',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="8" y="26" width="48" height="30" rx="1"/>
@@ -143,11 +149,14 @@ export default function Gallery() {
             <div
               key={service.id}
               className={styles.item}
-              style={{ background: `linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%)` }}
               onClick={() => setSelected(service)}
             >
-              <div className={styles.itemBg}>{service.icon}</div>
+              {/* Imagem de fundo */}
+              <div className={styles.itemImage}>
+                <img src={service.image} alt={service.title} />
+              </div>
               <div className={styles.itemOverlay} />
+              <div className={styles.itemBg}>{service.icon}</div>
               <div className={styles.itemContent}>
                 <span className={styles.itemCat}>{service.category}</span>
                 <h3 className={styles.itemTitle}>{service.title}</h3>
@@ -181,7 +190,8 @@ export default function Gallery() {
       {selected && (
         <div className={styles.modal} onClick={() => setSelected(null)}>
           <div className={styles.modalCard} onClick={e => e.stopPropagation()}>
-            <div className={styles.modalImg} style={{ background: `linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%)` }}>
+            <div className={styles.modalImg}>
+              <img src={selected.image} alt={selected.title} />
               <div className={styles.modalSvg}>{selected.icon}</div>
             </div>
             <div className={styles.modalBody}>
