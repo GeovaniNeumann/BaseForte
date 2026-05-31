@@ -8,7 +8,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Remove o parallax */
+  background-attachment: scroll;
+  /* Removido qualquer transform ou transition que pudesse causar zoom */
 }
 
 /* Background image handling via CSS for better performance */
@@ -17,10 +18,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    background-attachment: scroll; /* Remove o parallax no mobile também */
-  }
-  
   .hero {
     background-image: url('/heromobile.webp');
   }
@@ -35,7 +32,6 @@
     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0.2) 100%
   );
-  /* Removido o radial-gradient que causava o efeito de mouse parallax */
   z-index: 1;
 }
 
@@ -47,16 +43,7 @@
   width: 100%;
   margin-left: 0;
   margin-right: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* Removido opacidade e transform que poderiam causar efeitos */
 }
 
 .badge {
@@ -274,10 +261,12 @@
   }
 }
 
-/* Mobile */
+/* Mobile - Sem efeito de zoom */
 @media (max-width: 768px) {
   .hero {
     background-attachment: scroll;
+    /* Garantindo que não haja transform na imagem */
+    transform: none;
   }
   
   .content {
@@ -287,6 +276,8 @@
     margin-right: auto;
     margin-left: auto;
     max-width: 90%;
+    /* Removido qualquer transform */
+    transform: none;
   }
 
   .sub {
