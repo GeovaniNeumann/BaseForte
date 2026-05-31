@@ -5,7 +5,7 @@
   right: 0;
   z-index: 1000;
   padding: 16px 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transform: translateY(0);
@@ -21,9 +21,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.glow {
-  display: none;
-}
+/* Removido o .glow completamente */
 
 .inner {
   display: flex;
@@ -32,19 +30,23 @@
   gap: 24px;
 }
 
-/* Logo - COR ORIGINAL MANTIDA */
+/* Logo */
 .logo {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
 }
 
 .logoImg {
   height: 44px;
   width: auto;
   object-fit: contain;
-  transition: all 0.4s ease;
+  transition: height 0.3s ease;
 }
 
 .header.scrolled .logoImg {
@@ -60,8 +62,6 @@
   padding: 0;
   border-radius: 0;
   border: none;
-  backdrop-filter: none;
-  transition: all 0.4s ease;
 }
 
 .navLink {
@@ -73,7 +73,7 @@
   text-transform: uppercase;
   color: #333333;
   padding: 8px 0;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
   text-decoration: none;
 }
 
@@ -92,7 +92,7 @@
   width: 0;
   height: 2px;
   background: var(--accent, #ff4d4d);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 0.3s ease;
   border-radius: 2px;
 }
 
@@ -115,7 +115,7 @@
   text-transform: uppercase;
   padding: 10px 24px;
   border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(255, 77, 77, 0.2);
 }
@@ -123,11 +123,11 @@
 .cta:hover {
   transform: translateY(-2px);
   background: var(--accent-dark, #e04444);
-  box-shadow: 0 6px 16px rgba(255, 77, 77, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
 }
 
 .cta svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
   stroke: #ffffff;
 }
 
@@ -149,12 +149,11 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
 }
 
 .burger:hover {
   background: rgba(0, 0, 0, 0.08);
-  transform: scale(0.98);
 }
 
 .burger span {
@@ -162,7 +161,7 @@
   height: 2px;
   background: #1a1a1a;
   border-radius: 2px;
-  transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s ease;
 }
 
 .burger span:nth-child(1) { 
@@ -192,7 +191,7 @@
   width: 20px;
 }
 
-/* Mobile Drawer - Altura ajustada para não cobrir o telefone */
+/* Mobile Drawer */
 .mobileDrawer {
   position: fixed;
   top: 0;
@@ -204,11 +203,11 @@
   z-index: 1060;
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 80px; /* Padding inferior maior */
+  padding: 20px 20px 80px;
   transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease;
   box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
-  overflow-y: auto; /* Permite rolagem se necessário */
+  overflow-y: auto;
 }
 
 .mobileDrawerOpen {
@@ -241,13 +240,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   color: white;
 }
 
 .drawerClose:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: rotate(90deg);
 }
 
 .drawerNav {
@@ -255,7 +253,7 @@
   flex-direction: column;
   gap: 8px;
   flex: 1;
-  overflow-y: auto; /* Rolagem se os links forem muitos */
+  overflow-y: auto;
 }
 
 .drawerLink {
@@ -271,11 +269,11 @@
   padding: 10px 0;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .mobileDrawerOpen .drawerLink {
-  animation: fadeInUp 0.4s forwards;
+  animation: fadeInUp 0.3s forwards;
   animation-delay: calc(0.05s * var(--i));
 }
 
@@ -319,7 +317,7 @@
   letter-spacing: 0.08em;
   text-decoration: none;
   margin-bottom: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .drawerCta:hover {
@@ -335,7 +333,7 @@
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: 13px;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
   padding: 8px 0;
 }
 
