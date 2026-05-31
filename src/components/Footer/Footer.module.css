@@ -162,12 +162,12 @@
   line-height: 1.5;
 }
 
-/* Floating WhatsApp button */
+/* Floating WhatsApp button - Aparece apenas no final da página */
 .floating {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  z-index: 900;
+  z-index: 1000;
   width: 56px;
   height: 56px;
   background: #25D366;
@@ -177,6 +177,7 @@
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: fadeInUp 0.3s ease;
 }
 
 .floating:hover {
@@ -215,6 +216,18 @@
   transform: translateY(-50%);
   border: 5px solid transparent;
   border-left-color: var(--dark);
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Tablet */
@@ -260,7 +273,7 @@
   .tagline {
     max-width: 100%;
     text-align: center;
-    font-size: 15px; /* Padrão para mobile */
+    font-size: 15px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.6);
   }
@@ -276,7 +289,7 @@
 
   .colTitle {
     text-align: center;
-    font-size: 14px; /* Aumentado para melhor legibilidade */
+    font-size: 14px;
     margin-bottom: 18px;
   }
 
@@ -286,7 +299,7 @@
 
   .links li a {
     text-align: center;
-    font-size: 15px; /* Padrão para mobile */
+    font-size: 15px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.6);
   }
@@ -303,7 +316,7 @@
 
   .contactList li {
     justify-content: center;
-    font-size: 15px; /* Padrão para mobile */
+    font-size: 15px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.6);
   }
@@ -328,7 +341,7 @@
     color: rgba(255, 255, 255, 0.3);
   }
 
-  /* WhatsApp flutuante */
+  /* WhatsApp flutuante ajustado para mobile */
   .floating {
     bottom: 20px;
     right: 20px;
@@ -382,5 +395,18 @@
 
   .dev {
     font-size: 11px;
+  }
+
+  /* WhatsApp ainda menor em telas pequenas */
+  .floating {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating svg {
+    width: 24px;
+    height: 24px;
   }
 }
