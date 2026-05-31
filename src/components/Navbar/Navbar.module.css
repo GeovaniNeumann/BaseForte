@@ -135,7 +135,7 @@
   transform: translateX(4px);
 }
 
-/* Mobile Burger - Versão corrigida e alinhada */
+/* Mobile Burger */
 .burger {
   display: none;
   flex-direction: column;
@@ -177,7 +177,6 @@
   width: 20px; 
 }
 
-/* Estado aberto do burger - transforma em X */
 .burgerOpen span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
   width: 20px;
@@ -193,22 +192,23 @@
   width: 20px;
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer - Altura ajustada para não cobrir o telefone */
 .mobileDrawer {
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
-  max-width: 400px;
+  max-width: 320px;
   height: 100dvh;
   background: #1a1a1a;
   z-index: 1060;
   display: flex;
   flex-direction: column;
-  padding: 32px 24px;
+  padding: 20px 20px 80px; /* Padding inferior maior */
   transform: translateX(100%);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Permite rolagem se necessário */
 }
 
 .mobileDrawerOpen {
@@ -219,23 +219,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 48px;
-  padding-bottom: 20px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
 }
 
 .drawerLogo {
-  height: 40px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
 
 .drawerClose {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,21 +253,22 @@
 .drawerNav {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   flex: 1;
+  overflow-y: auto; /* Rolagem se os links forem muitos */
 }
 
 .drawerLink {
   font-family: var(--font-display, sans-serif);
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 12px 0;
+  gap: 12px;
+  padding: 10px 0;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.3s ease;
@@ -286,20 +288,21 @@
 
 .drawerLink:hover {
   color: var(--accent, #ff4d4d);
-  padding-left: 8px;
+  padding-left: 6px;
 }
 
 .drawerLinkNum {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--accent, #ff4d4d);
   font-weight: 500;
-  min-width: 32px;
+  min-width: 28px;
 }
 
 .drawerFooter {
-  margin-top: auto;
-  padding-top: 24px;
+  margin-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
 }
 
 .drawerCta {
@@ -308,13 +311,14 @@
   background: var(--accent, #ff4d4d);
   color: #ffffff;
   text-align: center;
-  padding: 16px;
-  border-radius: 12px;
+  padding: 12px;
+  border-radius: 10px;
   font-weight: 700;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   transition: all 0.3s ease;
 }
 
@@ -327,11 +331,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   transition: all 0.3s ease;
+  padding: 8px 0;
 }
 
 .drawerPhone:hover {
@@ -380,11 +385,38 @@
   }
   
   .mobileDrawer {
-    max-width: 100%;
-    padding: 24px 20px;
+    max-width: 280px;
+    padding: 16px 16px 70px;
+  }
+  
+  .drawerLogo {
+    height: 32px;
+  }
+  
+  .drawerClose {
+    width: 32px;
+    height: 32px;
   }
   
   .drawerLink {
-    font-size: 24px;
+    font-size: 18px;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  
+  .drawerLinkNum {
+    font-size: 11px;
+    min-width: 24px;
+  }
+  
+  .drawerCta {
+    padding: 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .drawerPhone {
+    font-size: 12px;
+    padding: 6px 0;
   }
 }
