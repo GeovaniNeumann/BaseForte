@@ -4,7 +4,7 @@ import styles from './Navbar.module.css'
 const links = [
   { href: '#hero', label: 'Início' },
   { href: '#sobre', label: 'Sobre' },
-  { href: '#galeria', label: 'Galeria' },
+  { href: '#servicos', label: 'Serviços' },
   { href: '#contato', label: 'Contato' },
 ]
 
@@ -27,7 +27,7 @@ export default function Navbar() {
     setLastScrollY(currentScrollY)
     setScrolled(currentScrollY > 50)
     
-    const sections = ['hero', 'sobre', 'galeria', 'contato']
+    const sections = ['hero', 'sobre', 'servicos', 'contato']
     for (const section of sections) {
       const element = document.getElementById(section)
       if (element) {
