@@ -391,7 +391,7 @@
 @media (max-width: 360px) {
   .imageBadge {
     padding: 5px 12px;
-    font-size: 11px;
+    font-size: 12px;
     white-space: normal;
     text-align: center;
     line-height: 1.3;
