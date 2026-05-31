@@ -256,6 +256,9 @@
     background-image: url('/heromobile.webp');
     background-attachment: scroll;
     background-position: center top;
+    /* Usa a altura capturada no primeiro render via JS.
+       Fallback para 100dvh caso o JS ainda não tenha rodado. */
+    min-height: var(--hero-height, 100dvh);
   }
   
   .content {
