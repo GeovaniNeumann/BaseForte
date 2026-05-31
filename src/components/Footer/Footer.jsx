@@ -121,8 +121,8 @@ export default function Footer() {
             © {year} Base Firme — Estruturas e Galpões Pré-Montados. Todos os direitos reservados.
           </p>
           <p className={styles.dev}>
-            Desenvolvido por Geovani Neumann
-          </p>
+  Desenvolvido por <a href="https://www.neumannwebsolutions.com.br/" target="_blank" rel="noopener noreferrer">Geovani Neumann</a>
+</p>
         </div>
       </div>
 
