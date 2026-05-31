@@ -48,7 +48,8 @@
 .imageBadge {
   position: absolute;
   bottom: 24px;
-  right: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--accent);
   color: var(--dark);
   padding: 8px 20px;
@@ -59,6 +60,9 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  text-align: center;
+  z-index: 10;
 }
 
 /* Lado do conteúdo */
@@ -108,7 +112,7 @@
 }
 
 .body {
-  font-size: 17px;  /* Alterado de 15px para 17px - MESMO TAMANHO DO lead */
+  font-size: 17px;
   color: var(--dark);
   line-height: 1.7;
   margin-bottom: 24px;
@@ -308,6 +312,14 @@
     text-align: center;
     padding: 40px;
   }
+  
+  /* Ajuste do badge para tablet */
+  .imageBadge {
+    bottom: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 680px) {
@@ -325,10 +337,41 @@
     justify-content: center;
   }
   
+  /* Badge responsivo para mobile */
   .imageBadge {
     bottom: 16px;
+    left: 16px;
     right: 16px;
-    padding: 6px 16px;
-    font-size: 12px;
+    transform: none;
+    padding: 6px 12px;
+    font-size: 10px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+    width: auto;
+    max-width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .imageBadge {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    font-size: 9px;
+    max-width: calc(100% - 24px);
+  }
+  
+  .about {
+    padding: 60px 0;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .lead, .body {
+    font-size: 15px;
   }
 }
