@@ -8,8 +8,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
-  /* Removido qualquer transform ou transition que pudesse causar zoom */
+  /* Remove background-attachment - isso força o comportamento padrão */
 }
 
 /* Background image handling via CSS for better performance */
